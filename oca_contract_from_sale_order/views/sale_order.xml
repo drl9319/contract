@@ -17,13 +17,12 @@
 
                 <xpath expr="//field[@name='partner_id']" position="before">
                     <field name="contract_from_sale"  attrs="{'readonly':[('state','!=', 'draft')]}"  />
-                    <field name="contract_type"  attrs="{'invisible':[('contract_from_sale','=', False)]}"  />
                 </xpath>
                 <xpath expr="//sheet/h1" position="after">
                     <group name="sale_extra_buttons"  attrs="{'invisible':[('contract_from_sale','=', False)]}" >
                         <button class="oe_stat_button" type="action" icon="fa-edit"
                                 name="%(act_related_sale_contract)d"
-                                string="Contratos" help="Ver contratos asociados">
+                                string="Contracts" help="View related contracts">
                         </button>
                     </group>
                 </xpath>
